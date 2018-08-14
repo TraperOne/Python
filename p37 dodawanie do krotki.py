@@ -1,0 +1,11 @@
+krotka =()
+krotka += ("Witaj",)
+krotka += ("w",)
+krotka += ("kursie",)
+krotka +=("Python",)
+print(krotka[0]+" "+krotka[1]+" "+krotka[2]+" "+krotka[3])
+
+print(krotka[0])
+print(krotka[1])
+print(krotka[2])
+print(krotka[3])
