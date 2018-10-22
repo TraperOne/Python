@@ -41,12 +41,12 @@ class Odznaki:
             self.menu()
         else:
             print("błędny login lub hasło")
+            self.logowanie()
 
     def insertRange(self):
 
         self.c.execute("SELECT * FROM lancuchy_gorskie")
         print("%5s | %25s" % ("\nWybór", "Łańcuch Górski"))
-
         result = self.c.fetchall()
         for row in result:
             print("%5s | %25s" % (row[0], row[1]))
@@ -54,7 +54,6 @@ class Odznaki:
 
         self.c.execute("SELECT * FROM pasma_gorskie WHERE lancuchy_gorskie_id_lancuchy_gorskie=%s", lancuch)
         print("%5s | %28s" % ("\nWybór", "Pasmo Górskie"))
-
         result = self.c.fetchall()
         for row in result:
             print("%5s | %28s" % (row[0], row[1]))
@@ -62,14 +61,13 @@ class Odznaki:
 
         self.c.execute("SELECT * FROM pasma_szczyty WHERE pasma_gorskie_id_pasma_gorskie=%s", pasmo)
         print("%5s | %28s | %10s" % ("\nWybór", "Szczyt Górski", "Wysokość"))
-
         result = self.c.fetchall()
         for row in result:
             print("%5s | %28s | %10s" % (row[0], row[1], row[2]))
 
     def insertPeak(self):
         while True:
-            dec = input("W -wybierz szczyt, na którym byłeś | Z -zmień lokalizację | Q -zakończ\n").lower()
+            dec = input("W -wybierz szczyt, na którym byłeś | Z -zmień lokalizację | S -zakończ i zapisz\n").lower()
             if dec == "w":
                 szczyt = input("Podaj ID szczytu: ")
                 self.c.execute(
@@ -77,7 +75,7 @@ class Odznaki:
                     (self.date, self.id_u, szczyt))
             elif dec == "z":
                 self.insertRange()
-            elif dec == "q":
+            elif dec == "s":
                 czynapewno = input("Zapisać wycieczkę? T/N ").lower()
                 if czynapewno == "t":
                     self.conn.commit()
@@ -100,9 +98,9 @@ class Odznaki:
             print("%20s|%20s|%30s|%15s" % (row[0], row[1], row[2], row[3]))
 
     def badges(self):
-        self.c.execute("select *, if(odznaka between 5 and 9, 'srebrna', if(odznaka <= 4, 'popularna', 'złota')) from odznaka_string")
+        self.c.execute("SELECT * FROM zdobyte_odznaki ")
         Result = self.c.fetchall()
-        print("%20s|%20s|%15s" % ("pasma", "szczyty", "odznaki"))
+        print("%20s|%20s|%15s" % ("nazwa pasma", "liczba szczytów", "stopnie odznak"))
         for row in Result:
             print("%20s|%20s|%15s" % (row[0], row[1], row[2]))
 
@@ -123,7 +121,7 @@ class Odznaki:
             dec = input("N -Załóż konto | L -Zaloguj się\n").lower()
             if dec == "n":
                 self.addUser()
-            else:
+            elif dec == "l":
                 self.logowanie()
                 break
 
