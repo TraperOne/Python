@@ -1,5 +1,6 @@
 import pymysql
 
+
 class Odznaki:
 
     def __init__(self):
@@ -86,7 +87,7 @@ class Odznaki:
                     print("Anulowano operację")
                     break
 
-    def archievements(self):
+    def achievement(self):
         self.c.execute("SELECT data_wycieczki, nazwa_pasma, nazwa_szczytu, wysokosc FROM pasma_szczyty "
                        "JOIN osiagniecia ON pasma_szczyty_id_pasma_szczyty = id_pasma_szczyty "
                        "JOIN pasma_gorskie ON pasma_gorskie_id_pasma_gorskie = id_pasma_gorskie "
@@ -105,7 +106,7 @@ class Odznaki:
             print("%20s|%20s|%15s" % (row[0], row[1], row[2]))
 
     def delete(self):
-        self.achievements()
+        self.achievement()
         datedel = input("Podaj datę wycieczki, którą chcesz usunąć: ")
         self.c.execute("DELETE FROM osiagniecia WHERE data_wycieczki=%s", datedel)
         czynapewno1 = input("Czy na pewno chcesz usunąć wycieczkę? T/N ")
@@ -134,7 +135,7 @@ class Odznaki:
                 self.insertRange()
                 self.insertPeak()
             elif dec == "t":
-                self.archievements()
+                self.achievement()
             elif dec == "o":
                 self.badges()
             elif dec == "u":

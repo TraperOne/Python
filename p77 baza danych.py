@@ -1,5 +1,6 @@
 import pymysql
 
+
 class Pracownicy:
     def __init__(self):
         self.conn = pymysql.connect('localhost', 'root', 'alfa147', 'testpython')

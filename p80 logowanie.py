@@ -1,5 +1,6 @@
 import pymysql
 
+
 class logowanie:
     def __init__(self):
         self.conn = pymysql.connect('localhost', 'root', 'alfa147', 'logowanie')
