@@ -100,11 +100,11 @@ class Odznaki:
 
     def badges(self):
         self.c.execute(
-            "SELECT id_uzytkownicy, nazwa_szczytu, nazwa_pasma FROM osiagniecia "
+            "SELECT nazwa_pasma, COUNT(DISTINCT nazwa_szczytu) AS liczba_szczytow"
             "JOIN uzytkownicy ON (osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy) "
             "JOIN pasma_szczyty ON (pasma_szczyty.id_pasma_szczyty = osiagniecia.pasma_szczyty_id_pasma_szczyty) "
             "JOIN pasma_gorskie ON (pasma_gorskie.id_pasma_gorskie = pasma_szczyty.pasma_gorskie_id_pasma_gorskie) "
-            "WHERE uzytkownicy.login = %s", self.login)
+            "WHERE uzytkownicy.login = %s GROUP BY nazwa_pasma", self.login)
         Result = self.c.fetchall()
         print("%20s|%20s|%15s" % ("nazwa pasma", "liczba szczytów", "stopnie odznak"))
         for row in Result:
