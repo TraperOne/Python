@@ -91,7 +91,7 @@ class Odznaki:
         self.c.execute("SELECT data_wycieczki, nazwa_pasma, nazwa_szczytu, wysokosc FROM pasma_szczyty "
                        "JOIN osiagniecia ON pasma_szczyty_id_pasma_szczyty = id_pasma_szczyty "
                        "JOIN pasma_gorskie ON pasma_gorskie_id_pasma_gorskie = id_pasma_gorskie "
-                       "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy " 
+                       "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
                        "WHERE uzytkownicy.login = %s", self.login)
         Result = self.c.fetchall()
         print("%20s|%20s|%30s|%15s" % ("data", "pasma", "szczyty", "wysokość"))
@@ -99,7 +99,12 @@ class Odznaki:
             print("%20s|%20s|%30s|%15s" % (row[0], row[1], row[2], row[3]))
 
     def badges(self):
-        self.c.execute("SELECT * FROM zdobyte_odznaki ")
+        self.c.execute(
+            "SELECT id_uzytkownicy, nazwa_szczytu, nazwa_pasma FROM osiagniecia "
+            "JOIN uzytkownicy ON (osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy) "
+            "JOIN pasma_szczyty ON (pasma_szczyty.id_pasma_szczyty = osiagniecia.pasma_szczyty_id_pasma_szczyty) "
+            "JOIN pasma_gorskie ON (pasma_gorskie.id_pasma_gorskie = pasma_szczyty.pasma_gorskie_id_pasma_gorskie) "
+            "WHERE uzytkownicy.login = %s", self.login)
         Result = self.c.fetchall()
         print("%20s|%20s|%15s" % ("nazwa pasma", "liczba szczytów", "stopnie odznak"))
         for row in Result:

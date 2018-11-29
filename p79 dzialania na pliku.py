@@ -4,7 +4,7 @@ def dodaj():
     g = int(input("Wpisz nr grupy: "))
 
     plik = open("dane.txt", "a")
-    plik.write("%10s,%10s,%10i\n" % (i, n, g))
+    plik.write("%0s,%0s,%0i\n" % (i, n, g))
     plik.close()
 
 def pokaz():
