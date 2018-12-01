@@ -92,7 +92,7 @@ class Odznaki:
                        "JOIN osiagniecia ON pasma_szczyty_id_pasma_szczyty = id_pasma_szczyty "
                        "JOIN pasma_gorskie ON pasma_gorskie_id_pasma_gorskie = id_pasma_gorskie "
                        "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
-                       "WHERE uzytkownicy.login = %s", self.login)
+                       "WHERE uzytkownicy.login = %s ORDER BY data_wycieczki DESC", self.login)
         Result = self.c.fetchall()
         print("%20s|%20s|%30s|%15s" % ("data", "pasma", "szczyty", "wysokość"))
         for row in Result:
@@ -135,7 +135,7 @@ class Odznaki:
     def menu(self):
         while True:
             dec = input(
-                "W -gdzie byłeś | T - twoje wycieczki | O -twoje odznaki | U -usun wycieczkę | Q -zakoncz\nCo chcesz zrobić: ").lower()
+                "W -gdzie byłeś | T -twoje wycieczki | O -twoje odznaki | U -usuń wycieczkę | Q -zakończ\nCo chcesz zrobić: ").lower()
             if dec == "w":
                 self.date = input("Podaj datę [RRRR-MM-DD] wycieczki: ")
                 self.insertRange()
