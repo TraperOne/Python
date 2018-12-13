@@ -94,9 +94,9 @@ class Odznaki:
                        "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
                        "WHERE uzytkownicy.login = %s ORDER BY data_wycieczki DESC", self.login)
         Result = self.c.fetchall()
-        print("%20s|%20s|%30s|%15s" % ("Data", "Pasma", "Szczyty", "Wysokość"))
+        print("%20s|%20s|%30s|%15s|" % ("DATA", "PASMA", "SZCZYTY", "WYSOKOŚĆ"))
         for row in Result:
-            print("%20s|%20s|%30s|%15s" % (row[0], row[1], row[2], row[3]))
+            print("%20s|%20s|%30s|%15s|" % (row[0], row[1], row[2], row[3]))
 
     def badgesKPG(self):
         self.c.execute(
@@ -107,9 +107,9 @@ class Odznaki:
             "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
             "WHERE uzytkownicy.login = %s GROUP BY pasma_gorskie_id_pasma_gorskie", self.login)
         Result = self.c.fetchall()
-        print("%20s|%20s|%20s" % ("łańcuchy górskie", "nazwa pasma", "liczba szczytów"))
+        print("%20s|%20s|%20s|" % ("ŁAŃCUCHY GÓRSKIE", "NAZWA PASMA", "LICZBA SZCZYTÓW"))
         for row in Result:
-            print("%20s|%20s|%20s" % (row[0], row[1], row[2]))
+            print("%20s|%20s|%20s|" % (row[0], row[1], row[2]))
 
     def badgesKGP(self):
         self.c.execute(
@@ -119,9 +119,9 @@ class Odznaki:
             "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
             "WHERE uzytkownicy.login = %s HAVING kgp != 'N'", self.login)
         Result = self.c.fetchall()
-        print("%20s|%20s|%20s|%20s" % ("nazwa pasma", "nazwa szczytu", "wysokość", "zdobyte szczyty"))
+        print("%20s|%20s|%20s|%20s|" % ("NAZWA PASMA", "NAZWA SZCZYTÓW", "WYSOKOŚĆ", "ZDOBYTE SZCZYTY"))
         for row in Result:
-            print("%20s|%20s|%20s|%20s" % (row[0], row[1], row[2], row[3]))
+            print("%20s|%20s|%20s|%20s|" % (row[0], row[1], row[2], row[3]))
 
     def delete(self):
         self.achievement()
@@ -147,12 +147,12 @@ class Odznaki:
     def menu(self):
         while True:
             dec = input(
-                "W -gdzie byłeś | T -twoje wycieczki | P -Korona Pasm Górskich | G -Korona Gór Polski | U -usuń wycieczkę | Q -zakończ\nCo chcesz zrobić: ").lower()
-            if dec == "w":
+                "D -gdzie byłeś | W -twoje wycieczki | P -Korona Pasm Górskich | G -Korona Gór Polski | U -usuń wycieczkę | Q -zakończ\nCo chcesz zrobić: ").lower()
+            if dec == "d":
                 self.date = input("Podaj datę [RRRR-MM-DD] wycieczki: ")
                 self.insertRange()
                 self.insertPeak()
-            elif dec == "t":
+            elif dec == "w":
                 self.achievement()
             elif dec == "p":
                 self.badgesKPG()
