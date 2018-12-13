@@ -94,22 +94,34 @@ class Odznaki:
                        "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
                        "WHERE uzytkownicy.login = %s ORDER BY data_wycieczki DESC", self.login)
         Result = self.c.fetchall()
-        print("%20s|%20s|%30s|%15s" % ("data", "pasma", "szczyty", "wysokość"))
+        print("%20s|%20s|%30s|%15s" % ("Data", "Pasma", "Szczyty", "Wysokość"))
         for row in Result:
             print("%20s|%20s|%30s|%15s" % (row[0], row[1], row[2], row[3]))
 
-    def badges(self):
+    def badgesKPG(self):
         self.c.execute(
             "SELECT nazwa, nazwa_pasma, COUNT(DISTINCT nazwa_szczytu) FROM osiagniecia "
-            "JOIN uzytkownicy ON (osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy) "
             "JOIN pasma_szczyty ON (pasma_szczyty.id_pasma_szczyty = osiagniecia.pasma_szczyty_id_pasma_szczyty) "
             "JOIN pasma_gorskie ON (pasma_gorskie.id_pasma_gorskie = pasma_szczyty.pasma_gorskie_id_pasma_gorskie) "
             "JOIN lancuchy_gorskie ON (lancuchy_gorskie.id_lancuchy_gorskie = pasma_gorskie.lancuchy_gorskie_id_lancuchy_gorskie) "
+            "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
             "WHERE uzytkownicy.login = %s GROUP BY pasma_gorskie_id_pasma_gorskie", self.login)
         Result = self.c.fetchall()
         print("%20s|%20s|%20s" % ("łańcuchy górskie", "nazwa pasma", "liczba szczytów"))
         for row in Result:
             print("%20s|%20s|%20s" % (row[0], row[1], row[2]))
+
+    def badgesKGP(self):
+        self.c.execute(
+            "SELECT nazwa_pasma, nazwa_szczytu, wysokosc, kgp AS zdobyte_szczyty FROM pasma_szczyty "
+            "JOIN pasma_gorskie ON (pasma_gorskie.id_pasma_gorskie = pasma_szczyty.pasma_gorskie_id_pasma_gorskie) "
+            "JOIN osiagniecia ON (osiagniecia.pasma_szczyty_id_pasma_szczyty = pasma_szczyty.id_pasma_szczyty) "
+            "JOIN uzytkownicy on osiagniecia.uzytkownicy_id_uzytkownicy = uzytkownicy.id_uzytkownicy "
+            "WHERE uzytkownicy.login = %s HAVING kgp != 'N'", self.login)
+        Result = self.c.fetchall()
+        print("%20s|%20s|%20s|%20s" % ("nazwa pasma", "nazwa szczytu", "wysokość", "zdobyte szczyty"))
+        for row in Result:
+            print("%20s|%20s|%20s|%20s" % (row[0], row[1], row[2], row[3]))
 
     def delete(self):
         self.achievement()
@@ -135,15 +147,17 @@ class Odznaki:
     def menu(self):
         while True:
             dec = input(
-                "W -gdzie byłeś | T -twoje wycieczki | O -twoje odznaki | U -usuń wycieczkę | Q -zakończ\nCo chcesz zrobić: ").lower()
+                "W -gdzie byłeś | T -twoje wycieczki | P -Korona Pasm Górskich | G -Korona Gór Polski | U -usuń wycieczkę | Q -zakończ\nCo chcesz zrobić: ").lower()
             if dec == "w":
                 self.date = input("Podaj datę [RRRR-MM-DD] wycieczki: ")
                 self.insertRange()
                 self.insertPeak()
             elif dec == "t":
                 self.achievement()
-            elif dec == "o":
-                self.badges()
+            elif dec == "p":
+                self.badgesKPG()
+            elif dec == "g":
+                self.badgesKGP()
             elif dec == "u":
                 self.delete()
             elif dec == "q":
