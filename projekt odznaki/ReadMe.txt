@@ -1,29 +1,32 @@
-	ZBIERAM ODZNAKI to autorski program, który zosta³ stworzony dla mi³oœników gór, którzy chc¹ zdobyæ odznaki Koron Pasm Górskich. Program s³u¿y do monitorowania na bierz¹co swoich osi¹gniêæ w zdobywaniu odznak z poszczególnych pasm górskich na podstawie odbytych wycieczek w góry. Program ten uwzglêdnia wszystkie stopnie odznak Korony Pojedynczych Pasm Górskich. Odznakê najnizszego stopnia mo¿na Zdobyæ, jeœli staniemy na przynjmniej jednym szczycie danego pasma górskiego. Natomiast odznakê najwy¿szego stopnia mo¿na zdobyæ jeœli staniemy na wszystkich szczytach z danego pasma.   
+	ZBIERAM ODZNAKI to autorski program, ktÃ³ry zostaÅ‚ stworzony dla miÅ‚oÅ›nikÃ³w gÃ³r, ktÃ³rzy chcÄ… zdobyÄ‡ odznaki Koron Pasm GÃ³rskich. Program sÅ‚uÅ¼y do monitorowania na bierzÄ…co swoich osiÄ…gniÄ™Ä‡ w zdobywaniu odznak z poszczegÃ³lnych pasm gÃ³rskich na podstawie odbytych wycieczek w gÃ³ry. Program ten uwzglÄ™dnia wszystkie stopnie odznak Korony Pojedynczych Pasm GÃ³rskich. OdznakÄ™ najnizszego stopnia moÅ¼na ZdobyÄ‡, jeÅ›li staniemy na przynjmniej jednym szczycie danego pasma gÃ³rskiego. Natomiast odznakÄ™ najwyÅ¼szego stopnia moÅ¼na zdobyÄ‡ jeÅ›li staniemy na wszystkich szczytach z danego pasma.   
 
-Pierwszym krokiem w programie jest za³o¿enie konta. Jak ju¿ konto zosta³o za³o¿one to wybieramy opcjê zaloguj. Przy rejestracji nale¿y podaæ imiê, nazwisko, oraz login i has³o do zalogowania siê. program posiada mo¿liwoœæ wycofania siê z rejestracji, jeœli siê nie decydujemy na za³o¿enie konta. Po za³o¿eniu konta program przekierowuje do panelu logowania, aby siê zalogowaæ na za³o¿one konto. 
+Pierwszym krokiem w programie jest zaÅ‚oÅ¼enie konta. Jak juÅ¼ konto zostaÅ‚o zaÅ‚oÅ¼one to wybieramy opcjÄ™ zaloguj. Przy rejestracji naleÅ¼y podaÄ‡ imiÄ™, nazwisko, oraz login i hasÅ‚o do zalogowania siÄ™. program posiada moÅ¼liwoÅ›Ä‡ wycofania siÄ™ z rejestracji, jeÅ›li siÄ™ nie decydujemy na zaÅ‚oÅ¼enie konta. Po zaÅ‚oÅ¼eniu konta program przekierowuje do panelu logowania, aby siÄ™ zalogowaÄ‡ na zaÅ‚oÅ¼one konto. 
 
-Po zalogowaniu siê, programu wyœwietla menu, które zawiera sekcje: 
-- "gdzie by³eœ",
+Po zalogowaniu siÄ™, programu wyÅ›wietla menu, ktÃ³re zawiera sekcje: 
+- "gdzie byÅ‚eÅ›",
 - "twoje wycieczki", 
-- "twoje odznaki",
-- "usuñ wycieczkê",
-- "zakoñcz".
+- "Korona Pasm GÃ³rskich",
+- "Korona GÃ³r Polski",
+- "usuÅ„ wycieczkÄ™",
+- "zakoÅ„cz".
 
-Wybieraj¹c opcjê "gdzie by³eœ", program umo¿liwia wprowadzenie wycieczki, któr¹ odby³eœ z podzia³em na pojedyncze dni. Program prosi o wprowadzenie daty pierwszego dnia wycieczki, po czym pokazuje listê ³añcuchów górskich znajduj¹cych siê w Polsce. Wybieramy jedn¹ z opcji poprzez wciœniêcie cyfry przypisanej do danego ³añcucha górskiego. Po czym program wyœwietla nastêpn¹ listê, tym razem pasm górskich, które zaliczaj¹ siê do wybranego ³añcucha górskiego. Wybieramy pasmo, którym podró¿owaliœmy. Po wciœniêciu odpowiedniej cyfry, program wyœwietla listê wszystkich szczytów znajduj¹cych siê na danym paœmie górskim, które zaliczaj¹ siê do korony danego pasma górskiego. Wybieramy szczyt lub szczyty, które zdobyliœmy danego dnia (kolejny dzieñ wymaga ponownego przejœcia przez ca³y proces). Program, w tym miejscu, umozliwia wybór jednego lub kilku szczytów (pojedynczo), zmianê pasma górskiego, gdy¿ mo¿e siê zda¿yæ, ¿e danego dnia weszliœmy na dwa szczyty, ale z ró¿nych pasm górskich, oraz zapisanie i wyjœcie do gównego menu i wprowadzenie kolejnego dnia wycieczki. Przy zapisywaniu program pyta czy na pewno zapisaæ wycieczkê. W przypadku wyboru z³ego szczytu mo¿emy siê wycofaæ z tej sytuacji poprzez NIE zapisanie wycieczki co spowoduje wyjœcie do g³ównego menu.
+WybierajÄ…c opcjÄ™ "gdzie byÅ‚eÅ›", program umoÅ¼liwia wprowadzenie wycieczki, ktÃ³rÄ… odbyÅ‚eÅ› z podziaÅ‚em na pojedyncze dni. Program prosi o wprowadzenie daty pierwszego dnia wycieczki, po czym pokazuje listÄ™ Å‚aÅ„cuchÃ³w gÃ³rskich znajdujÄ…cych siÄ™ w Polsce. Wybieramy jednÄ… z opcji poprzez wciÅ›niÄ™cie cyfry przypisanej do danego Å‚aÅ„cucha gÃ³rskiego. Po czym program wyÅ›wietla nastÄ™pnÄ… listÄ™, tym razem pasm gÃ³rskich, ktÃ³re zaliczajÄ… siÄ™ do wybranego Å‚aÅ„cucha gÃ³rskiego. Wybieramy pasmo, ktÃ³rym podrÃ³Å¼owaliÅ›my. Po wciÅ›niÄ™ciu odpowiedniej cyfry, program wyÅ›wietla listÄ™ wszystkich szczytÃ³w znajdujÄ…cych siÄ™ na danym paÅ›mie gÃ³rskim, ktÃ³re zaliczajÄ… siÄ™ do korony danego pasma gÃ³rskiego. Wybieramy szczyt lub szczyty, ktÃ³re zdobyliÅ›my danego dnia (kolejny dzieÅ„ wymaga ponownego przejÅ›cia przez caÅ‚y proces). Program, w tym miejscu, umozliwia wybÃ³r jednego lub kilku szczytÃ³w (pojedynczo), zmianÄ™ pasma gÃ³rskiego, gdyÅ¼ moÅ¼e siÄ™ zdaÅ¼yÄ‡, Å¼e danego dnia weszliÅ›my na dwa szczyty, ale z rÃ³Å¼nych pasm gÃ³rskich, oraz zapisanie i wyjÅ›cie do gÃ³wnego menu i wprowadzenie kolejnego dnia wycieczki. Przy zapisywaniu program pyta czy na pewno zapisaÄ‡ wycieczkÄ™. W przypadku wyboru zÅ‚ego szczytu moÅ¼emy siÄ™ wycofaÄ‡ z tej sytuacji poprzez NIE zapisanie wycieczki co spowoduje wyjÅ›cie do gÅ‚Ã³wnego menu.
 
-Wybieraj¹c opcjê "twoje wycieczki", program wyœwietla historiê wprowadzonych wycieczek z podzia³em na poszczególne szczyty. Wyœwietlana jest tak¿e wysokoœæ n.p.m. ka¿dego szczytu oraz na jakim paœmie górskim znajduje siê dany szczyt. Program sortujê historiê wycieczek od najstarszej daty do najnowszej, czyli na górze wyœwietla t¹ ostatni¹ odbyt¹ wycieczkê.
+WybierajÄ…c opcjÄ™ "twoje wycieczki", program wyÅ›wietla historiÄ™ wprowadzonych wycieczek z podziaÅ‚em na poszczegÃ³lne szczyty. WyÅ›wietlana jest takÅ¼e wysokoÅ›Ä‡ n.p.m. kaÅ¼dego szczytu oraz na jakim paÅ›mie gÃ³rskim znajduje siÄ™ dany szczyt. Program sortujÄ™ historiÄ™ wycieczek od najstarszej daty do najnowszej, czyli na gÃ³rze wyÅ›wietla tÄ… ostatniÄ… odbytÄ… wycieczkÄ™.
 
-Wybieraj¹c opcjê "twoje odznaki", program wyœwietla jakie odznaki do tej pory zdobyliœmy z odbytych wycieczek (w trakcie realizacji; aktualnie liczbê szczytów zdobytych na danym paœmie górskim). W zale¿noœci od wielkoœci pasma górskiego (im wieksze pasmo, tym wiecej szczytów do zdobycia) mamy mozliwoœæ zdobyæ ró¿ne stopnie odznak, i tak: 
-- 5 szczytów - popularna, z³ota
-- 10 szczytów - popularna, srebrna, z³ota
-- 15, 20, 30, 35 szczytów - popularna, br¹zowa, srebrna, z³ota.
-Algorytm zliczaj¹cy nie uwzglêdnia powtórnych wejœæ na ten sam szczyt, ale wyswietla je w historji. Tylko jednorazowe wejœcia na dany szczyt zalicz¹ siê do zdobycia jakiegokolwiek stopnia odznaki Korony Pasm Górskich.
+WybierajÄ…c opcjÄ™ "Korona Pasm GÃ³rskich", program wyÅ›wietla jakie odznaki do tej pory zdobyliÅ›my z odbytych wycieczek na poszczegÃ³lne pasma gÃ³rskie (w trakcie realizacji; aktualnie liczbÄ™ szczytÃ³w zdobytych na danym paÅ›mie gÃ³rskim). W zaleÅ¼noÅ›ci od wielkoÅ›ci pasma gÃ³rskiego (im wieksze pasmo, tym wiecej szczytÃ³w do zdobycia) mamy mozliwoÅ›Ä‡ zdobyÄ‡ rÃ³Å¼ne stopnie odznak, i tak: 
+- 5 szczytÃ³w - popularna, zÅ‚ota
+- 10 szczytÃ³w - popularna, srebrna, zÅ‚ota
+- 15, 20, 30, 35 szczytÃ³w - popularna, brÄ…zowa, srebrna, zÅ‚ota.
+Algorytm zliczajÄ…cy nie uwzglÄ™dnia powtÃ³rnych wejÅ›Ä‡ na ten sam szczyt, ale wyswietla je w historji. Tylko jednorazowe wejÅ›cia na dany szczyt zaliczÄ… siÄ™ do zdobycia jakiegokolwiek stopnia odznaki Korony Pasm GÃ³rskich.
 
-Wybieraj¹c opcjê "usuñ wycieczkê", program wyœwietli listê wprowadzonych wycieczek i z tej listy mo¿emy dowoln¹ wycieczkê usun¹æ podajac datê wycieczki. Ta dodatkowa opcja mo¿e byæ przydatna W przypadku, gdy siê pomyliliœmy przy wprowadzaniu wycieczki, a mimo to zosta³a zapisana.
+WybierajÄ…c opcjÄ™ "Korona GÃ³r Polski", program wyÅ›wietla listÄ™ aktualnie zdobytych szczytÃ³w przez zalogowanego uÅ¼ytkownika. Do KGP zalicza siÄ™ 28 najwyÅ¼szych szczytÃ³w z kaÅ¼dego pasma gÃ³rskiego.
 
-Ostatnia opcja to "zakoñcz", czyli koñczymy pracê z programem.
+WybierajÄ…c opcjÄ™ "usuÅ„ wycieczkÄ™", program wyÅ›wietli listÄ™ wprowadzonych wycieczek i z tej listy moÅ¼emy dowolnÄ… wycieczkÄ™ usunÄ…Ä‡ podajac datÄ™ wycieczki. Ta dodatkowa opcja moÅ¼e byÄ‡ przydatna W przypadku, gdy siÄ™ pomyliliÅ›my przy wprowadzaniu wycieczki, a mimo to zostaÅ‚a zapisana.
 
-Program bêdzie rozsze¿any o kolejne rodzaje odznak górskich! :)
+Ostatnia opcja to "zakoÅ„cz", czyli koÅ„czymy pracÄ™ z programem.
+
+Program bÄ™dzie rozszeÅ¼any o kolejne rodzaje odznak gÃ³rskich! :)
 
 
 
